@@ -12,66 +12,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 */
 
-/*
-
-NO MORE
-
-CGFloat( UInt( arc4random_uniform( UInt32( UInt( someCGFloat ) ) ) ) )
-
-*/
-
 import Foundation
-import UIKit
 
-extension String {
-	var floatValue: Float {
-		return (self as NSString).floatValue
-	}
+extension NSDictionary {
 	
-	var intValue: Int32 {
-		return (self as NSString).intValue
-	}
-	
-	var integerValue: Int {
-		return (self as NSString).integerValue
-	}
-	
-	var CGFloatValue: CGFloat {
-		return CGFloat( (self as NSString).floatValue )
-	}
-	
-	var NSStringValue: NSString {
-		return (self as NSString)
-	}
-}
-
-extension CGFloat {
-	var UInt32Value: UInt32 {
-		return UInt32(UInt(self))
-	}
-}
-
-extension Double {
-	var CGFloatValue: CGFloat {
-		return CGFloat(self)
-	}
-}
-
-extension Float {
-	var CGFloatValue: CGFloat {
-		return CGFloat(self)
-	}
-}
-
-extension Int {
-	var CGFloatValue: CGFloat {
-		return CGFloat(self)
-	}
-}
-
-extension UInt32 {
-	var CGFloatValue: CGFloat {
-		return CGFloat(UInt(self))
+	var allValuesNSArray: NSArray {
+		return (self.allValues as NSArray)
 	}
 	
 }
