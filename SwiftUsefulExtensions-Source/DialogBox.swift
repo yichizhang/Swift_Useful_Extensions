@@ -18,16 +18,13 @@ extension UIView {
 	
 	func drawDialogBoxInViewFrame(viewFrame:CGRect, triangleSize:CGSize, boxInsetX:CGFloat, boxInsetY:CGFloat){
 		
-//		USAGE:
-//		override func drawRect(rect: CGRect) {
-//			
-//			drawDialogBoxInViewFrame( rect, triangleSize: CGSizeMake(triangleWidth, triangleHeight), boxInsetX: 2, boxInsetY: 2 )
-//			
-//		}
-//	
+		let bgColor = UIColor.whiteColor()
+		let strokeColor = UIColor.blackColor()
+		drawDialogBoxInViewFrame(viewFrame, triangleSize:triangleSize, trianglePosition:0.5, boxInsetX:boxInsetX, boxInsetY:boxInsetY, bgColor:bgColor, strokeColor:strokeColor)
 		
-		let bgColor = UIColor(rgba: "#FFF")
-		let strokeColor = UIColor(rgba: "#000")
+	}
+	
+	func drawDialogBoxInViewFrame(viewFrame:CGRect, triangleSize:CGSize, trianglePosition:CGFloat, boxInsetX:CGFloat, boxInsetY:CGFloat, bgColor:UIColor, strokeColor:UIColor){
 		
 		let viewFrameWithInset = CGRectInset(viewFrame, boxInsetX, boxInsetY)
 		var boxFrame = viewFrameWithInset
@@ -39,7 +36,7 @@ extension UIView {
 		)
 		
 		let start:CGPoint = CGPointMake(
-			boxFrame.minX + boxFrame.width * 0.5 - triangleSize.width * 0.5,
+			boxFrame.minX + boxFrame.width * trianglePosition - triangleSize.width * 0.5,
 			boxFrame.minY + boxFrame.height
 		)
 		
