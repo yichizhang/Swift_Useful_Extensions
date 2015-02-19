@@ -18,7 +18,7 @@ class RoundLabel:UILabel{
 	
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		
+		self.clipsToBounds = true
 		self.layer.cornerRadius = self.frame.size.height/2
 	}
 }
